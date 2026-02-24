@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hotel Boutique La Ronda</title>
+
+  <style>
+    :root{
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --primary: #0f6ef6;
+      --muted: #2b2b33;
+      --accent: #f59e0b;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(15,30,60,0.08);
+      --maxw: 450px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      
+      background:
+        linear-gradient(rgba(255,255,255,0.50), rgba(255,255,255,0.50)),
+        url("https://black-cat.allcuencahotels.com/data/Imgs/OriginalPhoto/16378/1637877/1637877955/img-ronda-hotel-boutique-by-chat-noir-cuenca-27.JPEG") center/cover no-repeat;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      color:#0b1220;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    
+
+    .container{width:100%;max-width:var(--maxw);}
+    .header{text-align:center;margin-bottom:18px}
+    .logo{height:100px;object-fit:contain;margin-bottom:12px}
+    h1{margin:4px 0 0;font-size:1.6rem}
+    .sub{color:var(--muted);margin-top:6px}
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:var(--shadow);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .question{font-weight:600;margin-bottom:8px}
+    .stars{display:flex;gap:6px;margin-bottom:12px}
+    .star{
+      font-size:28px;padding:8px;border-radius:8px;border:none;background:transparent;cursor:pointer;
+      transition:transform .12s ease, color .12s ease;color:#d1d5db;
+    }
+    .star:hover{transform:scale(1.08)}
+    .star.active{color:var(--accent); text-shadow:0 1px 0 rgba(0,0,0,0.05)}
+    .actions{display:flex;gap:10px;justify-content:flex-end;align-items:center}
+    .btn{padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+    .btn.primary{background:var(--primary);color:white;box-shadow:0 6px 18px rgba(15,110,246,0.15)}
+    .btn.ghost{background:transparent;color:var(--muted)}
+    .message{margin-top:12px;color:var(--muted)}
+    .footer{text-align:center;margin-top:14px;color:var(--muted);font-size:0.85rem}
+    @media (max-width:520px){
+      .card{padding:14px}
+      h1{font-size:1.2rem}
+      .star{font-size:24px}
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <img src="https://www.cpn.fin.ec/convenioscpn/wp-content/uploads/2025/06/logo_la-ronda-340x227.jpg"
+           alt="Logo de La Ronda" class="logo" onerror="this.style.display='none'">
+      <h1>¿Cómo fue su estadía?</h1>
+      <p class="sub">Su opinión nos ayuda a mejorar. ¡Gracias por tomarse un minuto!</p>
+    </header>
+
+    <section class="card" id="feedbackCard">
+      <p class="question">Califique su experiencia:</p>
+
+      <div class="stars" id="stars" aria-label="Calificación">
+        <button class="star" data-value="1" aria-label="1 estrella">★</button>
+        <button class="star" data-value="2" aria-label="2 estrellas">★</button>
+        <button class="star" data-value="3" aria-label="3 estrellas">★</button>
+        <button class="star" data-value="4" aria-label="4 estrellas">★</button>
+        <button class="star" data-value="5" aria-label="5 estrellas">★</button>
+      </div>
+
+      <div class="actions">
+        <button id="submitBtn" class="btn primary">Enviar</button>
+      </div>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <footer class="footer">
+      <small>Gracias por elegirnos — Hotel Boutique La Ronda</small>
+    </footer>
+  </main>
+
+  <script>
+    
+    const GOOGLE_MAPS_URL = "https://g.page/r/CYlpGpp2dumzEAI/review";
+    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdKYv0Hqz6ApSPYGc8lhQ39rcb6TtJ80iwSQFZ6YtVy_55Dtw/viewform";
+    window.__APP_CONFIG = { GOOGLE_MAPS_URL, GOOGLE_FORM_URL };
+  </script>
+
+  <script>
+    
+    const starButtons = Array.from(document.querySelectorAll(".star"));
+    const submitBtn = document.getElementById("submitBtn");
+    const messageEl = document.getElementById("message");
+
+    let currentRating = 0;
+
+    function renderStars(rating) {
+      starButtons.forEach(btn => {
+        const val = Number(btn.dataset.value);
+        if (val <= rating) btn.classList.add("active");
+        else btn.classList.remove("active");
+      });
+    }
+
+    starButtons.forEach(btn => {
+      btn.addEventListener("mouseover", () => renderStars(Number(btn.dataset.value)));
+      btn.addEventListener("mouseout", () => renderStars(currentRating));
+      btn.addEventListener("click", (e) => {
+        currentRating = Number(btn.dataset.value);
+        renderStars(currentRating);
+        e.currentTarget.focus();
+      });
+    });
+
+    function resetForm() {
+      currentRating = 0;
+      renderStars(0);
+      setTimeout(() => { messageEl.textContent = ""; }, 6000);
+    }
+
+    submitBtn.addEventListener("click", () => {
+      if (currentRating === 0) {
+        messageEl.textContent = "Por favor seleccione una calificación (1–5).";
+        return;
+      }
+
+      const feedback = { rating: currentRating, timestamp: new Date().toISOString() };
+      console.log("Feedback enviado:", feedback);
+
+      if (currentRating >= 4 && window.__APP_CONFIG.GOOGLE_MAPS_URL) {
+        messageEl.textContent = "¡Gracias! Le abriremos Google Maps para que deje una reseña.";
+        window.open(window.__APP_CONFIG.GOOGLE_MAPS_URL, "_blank", "noopener");
+        resetForm();
+        return;
+      }
+
+      if (currentRating <= 3 && window.__APP_CONFIG.GOOGLE_FORM_URL) {
+        messageEl.textContent = "Lamentamos no haber cumplido sus expectativas. Abriremos un formulario para que nos cuente más.";
+        window.open(window.__APP_CONFIG.GOOGLE_FORM_URL, "_blank", "noopener");
+        resetForm();
+        return;
+      }
+
+      messageEl.textContent = "Gracias por su opinión.";
+      resetForm();
+    });
+  </script>
+</body>
+</html>
