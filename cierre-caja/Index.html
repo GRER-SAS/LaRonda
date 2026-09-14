@@ -1,36 +1,28 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cierre de Caja | GRER S.A.S.</title>
 <style>
-:root{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#172033;background:#f4f6fa}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:28px 16px;background:linear-gradient(135deg,#eef2f7,#f8fafc)}
-.wrap{max-width:850px;margin:auto}.brand{text-align:center;margin-bottom:22px}.brand h1{margin:0;font-size:28px}.brand p{margin:6px 0;color:#657083}.card{background:#fff;border:1px solid #e4e8ef;border-radius:18px;padding:25px;box-shadow:0 12px 35px #17203312;margin-bottom:16px}
-.step{display:flex;gap:12px;align-items:center;margin-bottom:20px}.badge{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#172033;color:#fff;font-weight:800}.step h2{font-size:18px;margin:0}.step small{color:#687386}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.full{grid-column:1/-1}label{font-size:13px;font-weight:700;display:block;margin-bottom:7px;color:#344054}input,select,textarea{width:100%;border:1px solid #cfd6e2;border-radius:10px;padding:12px;font:inherit;background:#fff}input:focus,select:focus,textarea:focus{outline:2px solid #17203322;border-color:#172033}
-.locked{opacity:.55}.money{font-variant-numeric:tabular-nums}.help{font-size:12px;color:#667085;margin-top:5px}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.box{background:#f7f8fb;border-radius:12px;padding:14px}.box span{display:block;color:#667085;font-size:12px}.box strong{display:block;font-size:20px;margin-top:5px}.match{border:1px solid #b7e1c2;background:#effaf1;color:#176b2c}.mismatch{border:1px solid #f0b7b7;background:#fff1f1;color:#9c2020}.actions{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}.btn{border:0;border-radius:11px;padding:13px 18px;font-weight:800;cursor:pointer}.primary{background:#172033;color:#fff}.primary:disabled{opacity:.4;cursor:not-allowed}.secondary{background:#edf0f5;color:#172033}.notice{padding:13px;border-radius:10px;margin-top:15px;display:none}.notice.show{display:block}.success{background:#eaf8ed;color:#176b2c}.error{background:#fff0f0;color:#9c2020}.cashGate{border:2px solid #e5e9f0;background:#fafbfc}.cashGate input{font-size:20px;font-weight:700}.hidden{display:none}
-@media(max-width:650px){.grid,.summary{grid-template-columns:1fr}.full{grid-column:auto}.card{padding:18px}.actions{flex-direction:column}.btn{width:100%}}
-</style>
-</head>
-<body>
-<div class="wrap">
+:root{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#172033;background:#f4f6fa}*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:28px 16px;background:linear-gradient(135deg,#eef2f7,#f8fafc)}.wrap{max-width:900px;margin:auto}.brand{text-align:center;margin-bottom:22px}.brand h1{margin:0;font-size:30px}.brand p{margin:6px 0;color:#657083}.card{background:#fff;border:1px solid #e4e8ef;border-radius:18px;padding:25px;box-shadow:0 12px 35px #17203312;margin-bottom:16px}.step{display:flex;gap:12px;align-items:center;margin-bottom:20px}.badge{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#172033;color:#fff;font-weight:800}.step h2{font-size:18px;margin:0}.step small{color:#687386}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.full{grid-column:1/-1}label{font-size:13px;font-weight:700;display:block;margin-bottom:7px;color:#344054}input,select,textarea{width:100%;border:1px solid #cfd6e2;border-radius:10px;padding:12px;font:inherit;background:#fff}input:focus,select:focus,textarea:focus{outline:2px solid #17203322;border-color:#172033}.locked{opacity:.5;pointer-events:none}.money{font-variant-numeric:tabular-nums}.help{font-size:12px;color:#667085;margin-top:5px}.cashGate{border:2px solid #e5e9f0}.cashGate input{font-size:20px;font-weight:700}.bills{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.bill{background:#f7f8fb;border:1px solid #e4e8ef;border-radius:12px;padding:12px}.bill-row{display:flex;align-items:center;gap:8px}.bill-row input{padding:9px}.bill-total{font-size:12px;color:#667085;margin-top:6px}.auto{background:#f1f5f9}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.box{background:#f7f8fb;border-radius:12px;padding:14px}.box span{display:block;color:#667085;font-size:12px}.box strong{display:block;font-size:20px;margin-top:5px}.match{border:1px solid #b7e1c2;background:#effaf1;color:#176b2c}.mismatch{border:1px solid #f0b7b7;background:#fff1f1;color:#9c2020}.actions{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}.btn{border:0;border-radius:11px;padding:13px 18px;font-weight:800;cursor:pointer}.primary{background:#172033;color:#fff}.primary:disabled{opacity:.4;cursor:not-allowed}.secondary{background:#edf0f5;color:#172033}.notice{padding:13px;border-radius:10px;margin-top:15px;display:none}.notice.show{display:block}.success{background:#eaf8ed;color:#176b2c}.error{background:#fff0f0;color:#9c2020}.nav{display:flex;justify-content:flex-end;margin-bottom:12px}.nav a{color:#172033;font-weight:700;text-decoration:none}.hidden{display:none}@media(max-width:650px){.grid,.summary,.bills{grid-template-columns:1fr}.full{grid-column:auto}.card{padding:18px}.actions{flex-direction:column}.btn{width:100%}}
+</style></head>
+<body><div class="wrap">
 <header class="brand"><h1>GRER S.A.S.</h1><p>Cierre de caja · Hoteles Cuenca</p></header>
+<div class="nav"><a href="?page=dashboard" target="_blank">Panel administrativo →</a></div>
 <section class="card cashGate">
-<div class="step"><div class="badge">1</div><div><h2>Conteo físico de caja</h2><small>Primero cuente físicamente el efectivo del turno.</small></div></div>
-<label for="cajaContada">Efectivo contado en caja ($)</label>
-<input id="cajaContada" class="money" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
-<div class="help">Al ingresar el conteo se habilitará el resto del formulario.</div>
+<div class="step"><div class="badge">1</div><div><h2>Conteo físico de caja</h2><small>Primero cuente los billetes y luego registre las monedas.</small></div></div>
+<div class="bills" id="bills"></div>
+<div style="margin-top:12px"><label for="coins">Total de monedas ($)</label><input id="coins" class="money" type="number" min="0" step="0.01" value="0.00"><div class="help">Las monedas se registran únicamente como valor total.</div></div>
+<div class="summary"><div class="box"><span>Total billetes</span><strong id="billTotal">$0.00</strong></div><div class="box auto"><span>Efectivo contado</span><strong id="cashTotal">$0.00</strong></div><div class="box"><span>Estado</span><strong id="gateStatus">Esperando conteo</strong></div></div>
 </section>
 <section id="formCard" class="card locked" aria-disabled="true">
-<div class="step"><div class="badge">2</div><div><h2>Datos del cierre</h2><small>Complete todos los valores del turno.</small></div></div>
+<div class="step"><div class="badge">2</div><div><h2>Datos del cierre</h2><small>El saldo anterior se obtiene automáticamente del último cierre del hotel.</small></div></div>
 <div class="grid">
 <div><label for="recepcionista">Recepcionista</label><input id="recepcionista" type="text" placeholder="Nombre completo"></div>
 <div><label for="fecha">Fecha</label><select id="fecha"></select></div>
 <div><label for="hotel">Hotel</label><select id="hotel"><option value="">Seleccione...</option></select></div>
 <div><label for="turno">Turno</label><select id="turno"><option value="">Seleccione...</option><option>Mañana</option><option>Tarde</option><option>Noche</option></select></div>
-<div><label for="saldoAnterior">Saldo anterior / fondo recibido ($)</label><input id="saldoAnterior" class="money calc" type="number" min="0" step="0.01" value="0.00"></div>
+<div><label for="saldoAnterior">Saldo anterior / fondo recibido ($)</label><input id="saldoAnterior" class="money auto" type="number" min="0" step="0.01" readonly value="0.00"><div id="saldoHelp" class="help">Seleccione hotel y fecha.</div></div>
 <div><label for="efectivo">Ingresos en efectivo ($)</label><input id="efectivo" class="money calc" type="number" min="0" step="0.01" value="0.00"></div>
 <div><label for="transferencia">Ingresos por transferencia ($)</label><input id="transferencia" class="money" type="number" min="0" step="0.01" value="0.00"></div>
 <div><label for="tarjeta">Ingresos por tarjeta ($)</label><input id="tarjeta" class="money" type="number" min="0" step="0.01" value="0.00"></div>
@@ -38,34 +30,18 @@
 <div class="full"><label for="observaciones">Observaciones (opcional)</label><textarea id="observaciones" rows="3" maxlength="500" placeholder="Detalle cualquier novedad del turno..."></textarea></div>
 </div>
 <div class="summary"><div class="box"><span>Efectivo esperado</span><strong id="esperado">$0.00</strong></div><div class="box"><span>Efectivo contado</span><strong id="contado">$0.00</strong></div><div id="estadoBox" class="box mismatch"><span>Diferencia</span><strong id="diferencia">$0.00</strong></div></div>
-<div id="notice" class="notice"></div>
-<div class="actions"><button id="resetBtn" class="btn secondary" type="button">Limpiar</button><button id="submitBtn" class="btn primary" type="button" disabled>Cerrar caja</button></div>
-</section>
-</div>
+<div id="notice" class="notice"></div><div class="actions"><button id="resetBtn" class="btn secondary" type="button">Limpiar</button><button id="submitBtn" class="btn primary" type="button" disabled>Cerrar caja</button></div>
+</section></div>
 <script>
-const $=id=>document.getElementById(id);
-let initial={};
-function money(v){return Number(v||0).toFixed(2)}
-function cents(v){return Math.round(Number(v||0)*100)}
-function update(){
- const gate=cents($('cajaContada').value)>0 || $('cajaContada').value==='0';
- $('formCard').classList.toggle('locked',!gate);$('formCard').setAttribute('aria-disabled',String(!gate));
- const expected=cents($('saldoAnterior').value)+cents($('efectivo').value)-cents($('egresos').value);
- const counted=cents($('cajaContada').value);const diff=counted-expected;
- $('esperado').textContent='$'+money(expected/100);$('contado').textContent='$'+money(counted/100);$('diferencia').textContent=(diff<0?'-':'')+'$'+money(Math.abs(diff)/100);
- $('estadoBox').className='box '+(diff===0?'match':'mismatch');
- const ready=gate && diff===0 && $('recepcionista').value.trim() && $('fecha').value && $('hotel').value && $('turno').value;
- $('submitBtn').disabled=!ready;
-}
+const $=id=>document.getElementById(id);let initial={};
+function cents(v){return Math.round(Number(v||0)*100)}function money(v){return Number(v||0).toFixed(2)}
+function updateBills(){let total=0,counts={};document.querySelectorAll('[data-denom]').forEach(i=>{const d=Number(i.dataset.denom),q=Math.max(0,parseInt(i.value||0,10)||0);counts[d]=q;total+=d*q});const coins=cents($('coins').value);const totalCents=total*100+coins;$('billTotal').textContent='$'+money(total);$('cashTotal').textContent='$'+money(totalCents/100);$('gateStatus').textContent=totalCents>0?'Conteo registrado':'Esperando conteo';const gate=totalCents>0;$('formCard').classList.toggle('locked',!gate);$('formCard').setAttribute('aria-disabled',String(!gate));update();return {counts,totalCents}}
+function update(){const counted=updateBills().totalCents;const expected=cents($('saldoAnterior').value)+cents($('efectivo').value)-cents($('egresos').value);const diff=counted-expected;$('esperado').textContent='$'+money(expected/100);$('contado').textContent='$'+money(counted/100);$('diferencia').textContent=(diff<0?'-':'')+'$'+money(Math.abs(diff)/100);$('estadoBox').className='box '+(diff===0?'match':'mismatch');const ready=counted>0&&diff===0&&$('recepcionista').value.trim()&&$('fecha').value&&$('hotel').value&&$('turno').value;$('submitBtn').disabled=!ready}
 function show(msg,type){$('notice').textContent=msg;$('notice').className='notice show '+type}
-function reset(){document.querySelectorAll('input').forEach(i=>{if(i.id==='cajaContada'||i.id==='recepcionista')i.value='';else if(i.type==='number')i.value='0.00'});$('observaciones').value='';$('hotel').value='';$('turno').value='';$('notice').className='notice';update()}
-$('cajaContada').addEventListener('input',update);document.querySelectorAll('input,select,textarea').forEach(x=>x.addEventListener('input',update));document.querySelectorAll('select').forEach(x=>x.addEventListener('change',update));$('resetBtn').onclick=reset;
-$('submitBtn').onclick=()=>{
- if($('submitBtn').disabled)return;
- const payload={fecha:$('fecha').value,recepcionista:$('recepcionista').value,hotel:$('hotel').value,turno:$('turno').value,cajaContada:$('cajaContada').value,saldoAnterior:$('saldoAnterior').value,efectivo:$('efectivo').value,transferencia:$('transferencia').value,tarjeta:$('tarjeta').value,egresos:$('egresos').value,observaciones:$('observaciones').value};
- $('submitBtn').disabled=true;$('submitBtn').textContent='Guardando...';show('Validando y registrando el cierre...','success');
- google.script.run.withSuccessHandler(r=>{show(`Caja cerrada correctamente. ID: ${r.id}`,'success');$('submitBtn').textContent='Caja cerrada';}).withFailureHandler(e=>{$('submitBtn').disabled=false;$('submitBtn').textContent='Cerrar caja';show(e.message||'No se pudo registrar el cierre.','error');}).registrarCierre(payload);
-};
-google.script.run.withSuccessHandler(data=>{initial=data;$('fecha').innerHTML=data.dates.map(d=>`<option value="${d}" ${d===data.today?'selected':''}>${d}</option>`).join('');$('hotel').innerHTML='<option value="">Seleccione...</option>'+data.hotels.map(h=>`<option>${h}</option>`).join('');update();}).withFailureHandler(e=>show('No se pudo cargar la configuración: '+e.message,'error')).getInitialData();
-</script>
-</body></html>
+function loadBalance(){if(!$('hotel').value||!$('fecha').value)return;$('saldoHelp').textContent='Consultando último cierre...';google.script.run.withSuccessHandler(v=>{$('saldoAnterior').value=money(v);$('saldoHelp').textContent=v>0?'Saldo tomado del último cierre registrado.':'No hay cierre anterior: se usa $0,00.';update()}).withFailureHandler(e=>{$('saldoAnterior').value='0.00';$('saldoHelp').textContent='No se pudo consultar el saldo anterior.';show(e.message||'Error consultando saldo.','error')}).getPreviousBalance($('hotel').value,$('fecha').value)}
+function checkDuplicate(){if(!$('hotel').value||!$('fecha').value||!$('turno').value)return;google.script.run.withSuccessHandler(r=>{if(r.exists)show(r.message,'error');update()}).withFailureHandler(e=>show(e.message,'error')).checkDuplicate($('hotel').value,$('fecha').value,$('turno').value)}
+function reset(){location.reload()}
+$('coins').addEventListener('input',updateBills);document.querySelectorAll('input,select,textarea').forEach(x=>x.addEventListener('input',()=>{update();if(x.id==='hotel'||x.id==='fecha'||x.id==='turno')checkDuplicate()}));document.querySelectorAll('select').forEach(x=>x.addEventListener('change',()=>{update();if(x.id==='hotel'||x.id==='fecha')loadBalance();if(x.id==='hotel'||x.id==='fecha'||x.id==='turno')checkDuplicate()}));$('resetBtn').onclick=reset;
+$('submitBtn').onclick=()=>{if($('submitBtn').disabled)return;const b=updateBills();const payload={fecha:$('fecha').value,recepcionista:$('recepcionista').value,hotel:$('hotel').value,turno:$('turno').value,cajaContada:money(b.totalCents/100),billCounts:b.counts,coins:$('coins').value,saldoAnterior:$('saldoAnterior').value,efectivo:$('efectivo').value,transferencia:$('transferencia').value,tarjeta:$('tarjeta').value,egresos:$('egresos').value,observaciones:$('observaciones').value};$('submitBtn').disabled=true;$('submitBtn').textContent='Guardando...';show('Validando y registrando el cierre...','success');google.script.run.withSuccessHandler(r=>{show(`Caja cerrada correctamente. ID: ${r.id}`,'success');$('submitBtn').textContent='Caja cerrada'}).withFailureHandler(e=>{$('submitBtn').disabled=false;$('submitBtn').textContent='Cerrar caja';show(e.message||'No se pudo registrar el cierre.','error')}).registrarCierre(payload)};
+google.script.run.withSuccessHandler(data=>{initial=data;$('fecha').innerHTML=data.dates.map(d=>`<option value="${d}" ${d===data.today?'selected':''}>${d}</option>`).join('');$('hotel').innerHTML='<option value="">Seleccione...</option>'+data.hotels.map(h=>`<option>${h}</option>`).join('');$('bills').innerHTML=data.denominations.map(d=>`<div class="bill"><label>Billete de $${d}</label><div class="bill-row"><input data-denom="${d}" type="number" min="0" step="1" value="0" inputmode="numeric"><span>unid.</span></div><div class="bill-total" id="bt${d}">Total: $0.00</div></div>`).join('');document.querySelectorAll('[data-denom]').forEach(i=>i.addEventListener('input',()=>{const d=Number(i.dataset.denom);$('bt'+d).textContent='Total: $'+money(d*(parseInt(i.value||0,10)||0));updateBills()}));updateBills()}).withFailureHandler(e=>show('No se pudo cargar la configuración: '+e.message,'error')).getInitialData();
+</script></body></html>
